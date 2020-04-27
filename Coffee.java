@@ -1,7 +1,6 @@
 
-/* Without a state pattern =)*/
-
-
+/* Without a state pattern =)    NOT REALLY RELEVANT ANYMORE*/
+/*
 public class Coffee {
     private String state = "";
 
@@ -27,3 +26,6 @@ public class Coffee {
         coffee.doAction();
     }
 }
+
+
+ */

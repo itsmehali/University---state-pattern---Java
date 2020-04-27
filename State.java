@@ -1,3 +1,3 @@
 public interface State {
-    public void doAction();
+    public void updateState(CoffeeContext ctx);
 }

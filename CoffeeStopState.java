@@ -1,6 +1,16 @@
 public class CoffeeStopState implements State {
+
+    private static CoffeeStopState instance = new CoffeeStopState();
+
+    private CoffeeStopState() {}
+
+    public static CoffeeStopState instance() {
+        return instance;
+    }
+
     @Override
-    public void doAction() {
-        System.out.println("Coffee making has been failed!");
+    public void updateState(CoffeeContext ctx) {
+        System.out.println("Coffee has been made!");
+        ctx.setCurrentState(OutForDelivery.instance());
     }
 }

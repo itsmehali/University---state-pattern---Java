@@ -4,14 +4,13 @@
 
 public class Main {
     public static void main(String[] args) {
-        CoffeeContext context = new CoffeeContext();
-        State coffeStartState = new CoffeeStartState();
-        State coffeStopState = new CoffeeStopState();
+       CoffeeContext ctx = new CoffeeContext(null, "Test123");
 
-        context.setState(coffeStartState);
-        context.doAction();
-
-        context.setState(coffeStopState);
-        context.doAction();
+       ctx.update();
+       ctx.update();
+       ctx.update();
+       ctx.update();
+       ctx.update();
+       ctx.update();
     }
 }

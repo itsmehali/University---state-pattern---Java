@@ -1,16 +1,40 @@
 public class CoffeeContext implements State{
-    private State coffeeState;
+    private State currentState;
+    private String orderID;
 
-    public void setState(State state) {
-        this.coffeeState = state;
+
+    public CoffeeContext(State currentState, String orderID) {
+        super();
+        this.currentState = currentState;
+        this.orderID = orderID;
+
+        if(currentState == null) {
+            this.currentState = Acknowledged.instance();
+        }
     }
 
-    public State getState(State state) {
-        return this.coffeeState;
+    public State getCurrentState() {
+        return currentState;
+    }
+
+    public void setCurrentState(State currentState) {
+        this.currentState = currentState;
+    }
+
+    public String getOrderID() {
+        return orderID;
+    }
+
+    public void setOrderID(String orderID) {
+        this.orderID = orderID;
+    }
+
+    public void update() {
+        currentState.updateState(this);
     }
 
     @Override
-    public void doAction() {
-        this.coffeeState.doAction();
+    public void updateState(CoffeeContext ctx) {
+
     }
 }
